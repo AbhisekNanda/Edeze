@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>order history</title>
+
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/header-footer.css">
+    <link rel="stylesheet" href="/static/css/order-history.css">
+   
+  </head>
+  <body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href=""><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <span><img src="/static/images/call_icon.svg" alt="">9348949096</span>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/static/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/static/images/Facebook_icon.svg" alt="">
+                <img src="/static/images/linkedin_icon.svg" alt="">
+                <span >contact us</span>
+            </div>
+        </div>
+
+        <div class=" nav">
+            <div class="left-part">
+                <a href="/"><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="search">
+                    <button type="submit" onclick="search()"><i class="fa-solid fa-magnifying-glass icon-search"></i></button>
+                </div>
+                <!-- <div class="search-container">
+                  <form action="">
+                    <input type="text" placeholder="Search" class="search-bar" placeholder="search..">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass" aria-hidden="true" ></i></button> 
+                </form>  
+                </div> -->
+                
+                
+            </div>
+             <div class="group">
+                <ul class="navigation">
+                    
+                    <li><a href="/{{id}}/Course" id="training">Training</a></li>
+                    <li><a href="/{{id}}/consulting">Consulting</a></li>
+                    <li><a href="/{{id}}/webstore">Webstore</a></li>
+                    <li><a href="/{{id}}/MyCourse">My courses</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/{{id}}/cart">Cart</a></li>
+                </ul>
+             </div>
+
+             <!-- <div class="cart">
+                <img src="/images/cart-icon.svg" alt="">
+            </div> -->
+            <div class="user-profile">
+                
+                <img src="/static/images/profilr-pic.svg" alt="" class="user-pic " id="userPic">
+                <p class="profile-name">{{name}}</p>
+                
+            </div>
+            <i class="fa-solid fa-bars menu-toggle"></i>
+
+            
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="/static/images/profilr-pic.svg" alt="">
+                        <h3>{{name}}</h3>
+                    </div>
+                    <hr>
+                    <a href="/{{id}}/OrderHistory" class="sub-menu-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>My Orders</p>
+                        <span>></span>
+                    </a>
+                    <a href="/" class="sub-menu-link">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>  
+                </div>
+            </div>    
+        </div>
+
+        <div class="training-menu-wrap">
+                <div class="training-menu">
+                    <div class="course-catagories">
+                        <h4>COURSE CATEGORIES</h4>
+                        <p>Information Technology
+                            <span>></span>
+                        </p>
+                        <p>Marketing
+                            <span>></span>
+                        </p>
+                        <p>Finance
+                            <span>></span>
+                        </p>
+                        <p>Cybersecurity & Data Protection
+                            <span>></span>
+                        </p>
+                        <p>stock market and crypto
+                            <span>></span>
+                        </p>
+                        
+                        <p>Business & Service Management
+                            <span>></span>
+                        </p>
+                        <p>Career Paths
+                            <span>></span>
+                        </p>
+                    </div>
+                    
+                    <div class="course-groups">
+                        <div class="course-group"></div>
+                        <h4>COURSE GROUPS</h4>
+                        <a href="#" class="course-link">Cloud Professional</a>
+                        <a href="#" class="course-link">Cloud Architect</a>
+                        <a href="#" class="course-link">Cloud Security & Governance</a>
+                        <a href="#" class="course-link">Cloud Specialist</a>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <section class="main-content">
+        <div class="tab">
+            <button class="tablinks active" id="webstoreBtn">Webstore detail</button>
+            <button class="tablinks" id="enrollmentBtn">enrollment detail</button>
+        </div>
+        <div id="webstore-history">
+            <center><p style=" font: normal 400 24px/26px 'DM Serif Text', sans-serif;color: #171717;">Order History</p></center>
+            <div class="main-container">
+                <h3>Orders</h3>
+                    {% for ow in ows %}
+                        <div class="course-item">
+                            <div class="description">
+                                <img src="/static/images/cart_course_image.svg" alt="">
+                                <div class="course-detail">
+                                    <a href="/{{id}}/OrderDetails/{{ow["Order_id"]}}">
+                                        <p class="course-name">{{ow["Course_name"]}}</p>
+                                    </a>
+                                    <p>Order ID: {{ow["Order_id"]}}</p>
+                                    <span style="color: #747474;">price:</span>
+                                    <span class="course-price" style="color: #85C45F;" >₹ {{ow["Price"]}}</span>
+                                </div>
+                            </div>
+                            <div class="status">
+                                <span>completed</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                
+            </div>
+        </div>
+
+        <div id="enrollment-history">
+            <center><p style=" font: normal 400 24px/26px 'DM Serif Text', sans-serif;color: #171717;">Enrollment History</p></center>
+            <div class="main-container">
+                <h3>Orders</h3>
+                    {% for oe in oes %}
+                        <div class="course-item">
+                            <div class="description">
+                                <img src="/static/images/cart_course_image.svg" alt="">
+                                <div class="course-detail">
+                                    <a href="/{{id}}/OrderDetails/{{oe["Order_id"]}}">
+                                        <p class="course-name">{{oe["Course_name"]}}</p>
+                                    </a>
+                                    <p>Order ID: {{oe["Order_id"]}}</p>
+                                    <span style="color: #747474;">price:</span>
+                                    <span class="course-price" style="color: #85C45F;" >₹ {{oe["Price"]}}</span>
+                                </div>
+                            </div>
+                            <div class="status">
+                                <span>completed</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                
+            </div>
+        </div>
+        
+    </section>
+
+<footer>
+    <div class="row">
+        <div class="col">
+            <img src="/static/images/footer-logo.svg" alt="" class="footer-logo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eum ipsa nemo doloremque tenetur minima laudantium quos molestias asperiores ex?</p>   
+        </div>
+        <div class="col">
+            <h3>About us</h3>
+            <ul>
+                <li><a href="">Company</a></li>
+                <li><a href="">Our Team</a></li>
+                <li><a href="">Our Partners</a></li>
+                <li><a href="">Our Customers</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Quick links</h3>
+            <ul>
+                <li><a href="">Web store</a></li>
+                <li><a href="">Privacy policy</a></li>
+                <li><a href="">Trademarks & Copyrights</a></li>
+                <li><a href="">Our Customers</a></li>
+                <li><a href="">Complaints & Appeal</a></li>
+                
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Subscribe to our notifications</h3>
+            <form>
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Enter your email id" required>
+                <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <div class="social-icons">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">©2023 All Rights reserved by EDEZE.</p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="/static/javascript/header-footer.js"></script>
+
+    <script type="text/javascript">
+        //active tabs 
+        $('.tab').on('click','button',function(){
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+
+        //show cart on button click
+        const webstoreBtn = document.getElementById('webstoreBtn');
+        const enrollmentBtn = document.getElementById('enrollmentBtn');
+
+        const webstoreContainer = document.getElementById('webstore-history');
+        const enrollmentContainer = document.getElementById('enrollment-history');
+
+        enrollmentBtn.addEventListener('click',function(){
+            webstoreContainer.style.display = 'none';
+            enrollmentContainer.style.display = 'block';
+        });
+        webstoreBtn.addEventListener('click',function(){
+            enrollmentContainer.style.display = 'none';
+            webstoreContainer.style.display = 'block';
+        });
+
+        
+        function search() {
+            let q= document.getElementById("search").value;
+            window.location.href = "/"+q+"/search";
+            }
+        
+    </script>
+  </body>
+</html>

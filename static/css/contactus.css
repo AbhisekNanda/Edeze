@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.main-container{
+    width: 100%;
+    margin-bottom: 400px;
+}
+.main-container img{
+    width: 100%;
+    z-index: -1;
+}
+.main-container .path{
+    padding: 35px 0px 30px 120px;
+    position: absolute;
+    top: 113px;
+}
+.main-container .path p{
+    color: #454A6D;
+    font: normal 500 16px/22px "Manrope", sans-serif;
+}
+.main-container .contact-us{
+    position: absolute;
+    top: 173px;
+    z-index: 1;
+    display: flex;
+    column-gap: 100px;
+    margin-left: 120px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #F3F3F3; 
+}
+.contact-info{
+    padding: 30px 35px 45px 0px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    /* text-align: center; */
+}
+.contact-info h1{
+    font: normal 400 48px/53px "DM Serif Text", sans-serif;
+    color: #3A3B44;
+}
+.contact-info span{
+    padding-top: 35px;
+    font: normal 500 16px/22px "Manrope", sans-serif;
+    color: #454A6D;
+    padding-bottom: 18px;
+}
+.contact-info .office{
+    background: rgba(255, 255, 255, 0.79);
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.contact-info h5{
+    color: #454A6D;
+    font: normal 700 18px/25px "Manrope", sans-serif;
+    padding: 17px 0px 18px 25px;
+}
+.contact-info p{
+    font: normal 400 14px/19px "Manrope", sans-serif;
+    color: #454A6D;
+    padding: 0px 40px 16px 25px;
+}
+.contact-info .columns{
+    display: flex;
+    column-gap: 25px;
+}
+.contact-info .email ,.phone{
+    /* width: inherit; */
+    background: rgba(255, 255, 255, 0.79);
+    border-radius: 10px;
+}
+.email p{
+    padding-right: 150px;
+}
+.contact-form{
+    background: #FFFFFF;
+    box-shadow: 0px 12px 34px -9px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    width: fit-content;
+}
+.contact-form h4{
+    color: #000000;
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    padding: 26px 0px 0px 32px;
+}
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px 45px 30px;
+    z-index: 1;
+}
+.contact-form form input:not([type="checkbox"]),textarea{
+    width: 485px;
+    height: 58px;
+    background: #F5F5F5;
+    border-radius: 9px;
+    border: none;
+    padding-left: 20px;
+    font: normal 400 16px/25px "Manrope", sans-serif;
+    color: #000000;
+    margin-top: 20px;
+}
+.contact-form form button{
+    width: 485px;
+    height: 58px;
+    background: #F89F1C;
+    border-radius: 9px;
+    border: none;
+    color: #FFFFFF;
+    font: normal 500 18px/25px "Manrope", sans-serif;
+    /* margin-bottom: 30px; */
+    margin-top: 25px;
+}
+.agree-checkbox{
+    margin: 20px 0px;
+    color: #000000;
+}
+textarea{
+    padding-top: 15px;
+}
+input[type="checkbox"]{
+    
+    accent-color: #F89F1C;
+}
+.our-presence h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal 500 36px/48px "DM Serif Text", sans-serif;
+    color: #1F1F1F;
+    margin-bottom: 80px;
+}
+.our-presence .row1{
+    margin: 0px 100px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.our-presence .row2{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    margin-bottom: 50px;
+}
+.presence{
+    background: rgba(255, 240, 201, 0.73);
+    border-radius: 10px;
+    width: fit-content;
+}
+.presence span{
+    position: relative;
+    font: normal 700 18px/25px "Manrope", sans-serif;
+    color: #454A6D;
+    padding: 17px 0px 0px 24px;
+    top: 15px;
+}
+.presence p{
+    font: normal 400 14px/19px "Manrope", sans-serif;
+    color: #454A6D;
+    max-width: 300px;
+    padding: 28px 22px 20px 24px;
+}

@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.main-section .path{
+    padding-bottom: 20px;
+    /* border-bottom: 1.5px solid #F3F3F3; */
+    margin: 35px 60px 0px 60px;
+}
+.main-section .path p{
+   color: #454A6D;
+   font: normal 500 16px/22px "Manrope", sans-serif;
+}
+/* CSS styles for the tabs */
+.tab {
+    /* overflow: hidden; */
+    margin: 20px auto;
+    background: #E0ECFD;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    
+}
+
+.tab button {
+   background: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px;
+    transition: .6s;
+    font-size: 17px;
+    color: #706F6F;
+
+}
+.tab button.active {
+    background: #010D51;
+    border-radius: 6px;
+    color: #ffffff;
+}
+#webstore-history{
+    margin: 30px 160px;
+    /* display: flex;
+    justify-content: center; */
+}
+#enrollment-history{
+    margin: 30px 160px;
+    display: none;
+}
+.main-container{
+    margin-top: 25px;
+    border: 1.5px solid #f3f3f3;
+    padding: 30px;
+    
+}
+.main-container h3{
+    color: #494949;
+    font: normal 400 24px/26px "DM Serif Text", sans-serif;
+    margin-bottom: 20px;
+}
+.main-container .course-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.course-item .description{
+    display: flex;
+    flex-direction:row;
+    column-gap: 15px;
+    align-items: center;
+    /* row-gap: 10px; */
+}
+.course-item .description img{
+    height: 110px;
+    width: auto;
+}
+.course-item .description .course-detail p{
+    padding-bottom: 15px;
+    color: #373737;
+    font: normal 700 16px/22px "manrope", sans-serif;
+}
+.course-item .description .course-detail span{
+    padding-bottom: 15px;
+}
+.course-item .status{
+    color: #3C804B;
+    font: normal 400 14px/19px "manrope", sans-serif;       
+    background: #EBF9E3;
+    border-radius: 3.58759px;
+    padding: 5px 10px;
+}

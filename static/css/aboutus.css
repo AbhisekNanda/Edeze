@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+  }
+.image-container {
+    position: relative;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+  }
+  
+  .overlay-image {
+    position: absolute;
+    bottom: -100px;
+    padding: 0 10%; 
+    left: 50%;
+    box-sizing: border-box; 
+    transform: translateX(-50%);
+  }
+  
+  .text-overlay h1 {
+    position: absolute;
+    font-family: 'Manrope';
+    top: 0;
+    left: 0;
+    color: #454A6D;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 61px;
+    margin-top: 34px;
+  }
+  
+  .first_text {
+    position: absolute;
+    transform: translateX(-50%);
+    font-family: 'DM Serif Text';
+    top: 70px;
+    left: 50%;
+    color: #454A6D;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .second_text {
+    position: absolute;
+    transform: translateX(-50%);
+    font-family: 'Manrope';
+    top: 150px;
+    left: 50%;
+    color: #454A6D;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .description{
+    margin-top: 150px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Manrope';
+    padding-left: 115px;
+    padding-right: 115px;
+    text-align: center;
+    
+  }
+  .text_container{
+    background-color: #1366EB;
+    color: #fff;
+    margin-top: 50px;
+    width: 100%;
+    padding: 27px 0px 28px 0px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Manrope';
+    text-align: center;
+
+    
+  }
+  .mission_and_vision {
+    display: flex;
+    margin-top: 50px;
+    gap: 35px;
+    padding: 0 40px 0 40px;
+  }
+
+  .mission_and_vision div{
+    display: flex;
+    flex: 50%;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 27px 0px 28px 0px;
+    flex-direction: column;
+    background-color: #F2F7FF;
+    border-radius: 10px;
+    font-family: 'Manrope';
+    align-items: center;
+  }
+
+  .mission_and_vision img{
+    height: 97px;
+    width: 97px;
+  }
+
+  .mission_and_vision h1{
+    color: #037FFB;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .mission_and_vision p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #4A4A4A;
+  }
+
+  

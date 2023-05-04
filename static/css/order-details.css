@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.main-section .path{
+    padding-bottom: 20px;
+    /* border-bottom: 1.5px solid #F3F3F3; */
+    margin: 35px 60px 0px 60px;
+}
+.main-section .path p{
+   color: #454A6D;
+   font: normal 500 16px/22px "Manrope", sans-serif;
+}
+.main-section .path h2{
+    color: #171717;
+    font: normal 400 24px/26px "DM Serif Text", sans-serif;
+}
+.order-status {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 61px;
+    padding: 20px 0px;
+    border-top: 1.5px solid #F3F3F3;
+    border-bottom: 1.5px solid #F3F3F3;
+}
+.order-status .id span{
+    font: normal 700 16px/22px "Manrope", sans-serif;
+    color: #373737;
+}
+.order-status .status{
+    display: flex;
+    column-gap: 35px;
+}
+.order-status .status span{
+    color: #3C804B;
+    font: normal 400 14px/19px "Manrope", sans-serif;
+    background: #E4FCD5;
+    border-radius: 3.58759px;
+    padding: 5px 15px;
+}
+.order-status .status pre{
+    display: flex;
+    align-items: center ;
+}
+
+
+
+
+
+.cart-container{
+    display: flex;
+    border-bottom: 1.5px solid #F3F3F3;
+}
+.cart-container .course-list{
+    flex: 0.65;
+    padding: 21px 31px 40px 61px;
+    border-right: 1.5px solid #F3F3F3 ;
+}
+.course-list .course-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1.5px solid #F3F3F3;
+}
+.course-item .description{
+    display: flex;
+    column-gap: 25px;
+}
+.course-item .course-price{
+    font: normal 400 16px/22px "Manrope", sans-serif;
+    padding-right: 20px;
+    text-align: end;
+}
+
+.course-detail p{
+    padding-bottom: 15px;
+    color: #373737;
+    font: normal 700 16px/22px "Manrope", sans-serif;
+}
+.billing-details{
+    margin: 20px 60px 40px 30px;
+    flex: 0.35;
+}
+.address .heading{
+    display: flex;
+    justify-content: space-between;
+}
+.address h4{
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    color: #000000;
+}
+.address span{
+    color: #005DF2;
+    font: normal 800 20px/27px "Manrope", sans-serif;
+}
+.address input{
+    margin-top: 30px;
+    width: 459px;
+    height: 94px;
+    background: #F8F8F8;
+    border-radius: 9px;
+    border: none;
+    padding: 18px 35px;
+}
+.order-total{
+    margin-top: 40px;
+}
+.order-total h4{
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    color: #000000;
+}
+.order-total .price{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.order-total .price p{
+    font: normal 400 16px/22px "Manrope", sans-serif;
+    color: #000000;
+}
+.order-total .price span{
+    font: normal 700 16px/22px "Manrope", sans-serif;
+    color: #000000;
+}
+
+.Reorder-btn{
+    margin-top: 60px;
+    width: 100%;
+    height: 58px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    color: #000000;
+    font: normal 500 18px/25px "Manrope", sans-serif;
+}
+.Reorder-btn:hover{
+    background-color: #d8d8d8;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Edeze</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="/static/images/footer-logo.svg" alt="" style="width:90px;height:80px;margin-left:10px">
+                        </span>
+                      
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/AdminUserStatus">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">User Status</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/adminverifyjoinus">
+                        <span class="icon">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </span>
+                        <span class="title">Verify service providers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/adminorderhistory">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="title">Order History</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/AdminAllCourse">
+                        <span class="icon">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </span>
+                        <span class="title">All Course</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="/static/images/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{t_user}}</div>
+                        <div class="cardName">Total Users</div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{t_mentor}}</div>
+                        <div class="cardName">Total Mentors</div>
+                   </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{t_university}}</div>
+                        <div class="cardName">Total Universities:</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{t_ia}}</div>
+                        <div class="cardName">Total Individual Authors</div>
+                    </div>
+
+                    <div class="iconBx">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Recent Orders</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Order ID</td>
+                                <td>Price</td>
+                                <td>Payment</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for rec in recs %}
+                                <tr>
+                                    <td>{{rec["Order_id"]}}</td>
+                                    <td>₹ {{rec["Price"]}}</td>
+                                    <td>Paid</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ================= New Customers ================ -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>users</h2>
+                    </div>
+
+                    <table>
+                        {% for user in users %}
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="/static/images/customer02.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>{{user["First_name"]}} <br> </h4>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="/javascript/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

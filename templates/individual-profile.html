@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>individual profile</title>
+
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+
+    <style>
+        h1{
+            color: #373737;
+            font: normal 700 32px/33px "DM serif text", sans-serif;
+        }
+        .courses{
+            display: flex;
+            margin: 30px 60px 30px 60px;
+            flex-wrap: wrap;
+        }
+        .item{
+            flex: 1 0 21%;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .item h2{
+            padding-bottom: 10px;
+        }
+        .item p{
+            color: #000000;
+            font: normal 400 16px/22px "Manrope", sans-serif;
+        }
+        .specification h3{
+            padding-top: 10px;
+        }
+        .specification ul{
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        .specification ul li{
+            padding-bottom: 10px;
+            color: #000000;
+            font: normal 400 16px/22px "Manrope", sans-serif;
+            list-style: none;
+            /* max-width: 840px; */
+        }
+        .specification ul li:before {
+            content:"•";
+            font-size:40px;
+            vertical-align: top;
+            line-height:20px;
+            color:  #0041EC;
+        }
+        .specification ul li span{
+            padding-left: 0px;
+        }
+        .buttons{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+        }
+        .buttons button{
+            margin-top: 20px;
+            width: 250px;
+            height: 58px;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+        }
+        button:hover{
+            background: #0137c2;
+        }
+        .add-course{
+            width: 560px;
+           overflow: hidden;
+           overflow-y: scroll;
+            background: #f4f4f4;
+           
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 998;
+            
+        }
+        .add-course h3{
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 20px;
+            color: #000000;
+            font: normal 700 24px/24px "Manrope", sans-serif;
+        }
+        form{
+            position: relative;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 50px;
+        }
+
+        form label{
+            /* padding-bottom: 10px; */
+            font: normal 400 16px/18px "Manrope", sans-serif;
+        }
+        form input,textarea{
+            width: 100%;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border: 0;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+        input::placeholder{
+            color: #6B6B6B;
+            font: normal 400 14px/14px "Manrope", sans-serif;
+        }
+        form button{
+            width: 100%;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+            height: 48px;
+            margin-top: 10px;
+        }
+        form button:hover{
+            background: #0137c2;
+        }
+
+
+
+
+        .request-change{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 300px;
+            background: #ECF3FF;
+            border-radius: 10px;
+            display: none;
+            z-index: 999;
+            
+        }
+        .change-request-form{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 30px;
+            justify-content: center;
+            
+        }
+        textarea{
+            padding: 10px 15px;
+            border: 0;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+        .change-request-form textarea{
+            margin: 15px 0px 50px 0px;
+        }
+        .change-request-form button{
+            height: 58px;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+        }
+        .change-request-form button:hover{
+            background: #0137c2;
+        }
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index:1;
+        }
+        .right-part a{
+            padding-right: 70px;
+            font-size: 25px;
+            color: #0041EC;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href="https://mail.google.com/mail"><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <a href=""><span><img src="/static/images/call_icon.svg" alt="">9348949096</span></a>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/static/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/static/images/Facebook_icon.svg" alt="">
+                <img src="/static/images/linkedin_icon.svg" alt="">
+                <a href=""><span >contact us</span></a>
+            </div>
+        </div>
+
+        <div class="container nav">
+            <div class="left-part">
+                <a href="/pages/index.html"><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <!-- <input type="text" placeholder="Search" class="search-bar"> -->
+            </div>
+
+            <div class="right-part">
+                <a href="#about">About us</a>
+            </div>
+        </div>
+    </header>
+    <center><h1>your courses</h1></center>
+    <div class="courses">
+        {% for crs in course %}
+            <div class="item">
+                <h2 class="course-name">{{crs["Course_name"]}}</h2>
+                <h2 class="catagory">{{crs["Category"]}}</h2>
+                <p class="price">price: {{crs["selling_price"]}}</p>
+                <div class="specification">
+                    <h3>Specifications</h3>
+                    <ul>  
+                        <li><span>{{crs["Desc"]}}</span></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+        
+        
+    </div>
+    
+    <div class="buttons">
+        <button type="submit" id="courseBtn">Add course</button>
+        <button type="submit" id="changeRequestBtn">Request change</button>
+    </div>
+    <div class="add-course" id="addCourseForm">
+        <h3>Add Course</h3>
+        <form action="/{{id}}/AddCourseWebstore" id="form2" method="POST">
+            <label for="courseName">Enter course Name</label>
+            <input type="text" id="courseName" placeholder="course Name" name="courseName" required>
+
+            <label for="authorName">Enter author Name</label>
+            <input type="text" id="authorName" placeholder="author Name" name="authorName" required>
+
+            <label for="category">category</label>
+            <input type="text" id="category" placeholder="Enter Category" name="category" required>
+
+            <label for="description">Description</label>
+            <textarea name="description" id="description" name="description" cols="30" rows="5"></textarea>
+
+            <label for="price"> price</label>
+            <input type="text" id="price" placeholder="Enter course price" name="price" required >
+               
+            <label for="sellingPrice"> selling price</label>
+            <input type="text" id="sellingPrice" placeholder="price after discount" name="sellingPrice" required >
+
+            <button type="submit" id="submitBtn" >submit</button> 
+        </form>
+    </div>
+    <div class="request-change" id="changeRequestForm">
+        <form action="" class="change-request-form">
+            <label for="changeRequest">Request body</label>
+                <textarea name="changeRequest" id="changeRequest" cols="30" rows="5"></textarea>
+                <button type="submit" >send</button> 
+        </form>
+    </div>
+    <div class="overlay" id="overlay" style="display: none;"></div>
+
+
+    <script>
+        const courseBtn = document.getElementById("courseBtn");
+        const changeRequestBtn = document.getElementById("changeRequestBtn");
+
+        const addCourseForm = document.getElementById("addCourseForm");
+        const changeRequestForm = document.getElementById("changeRequestForm");
+        const overlay = document.getElementById("overlay");
+
+       courseBtn.addEventListener("click",function(){
+        addCourseForm.style.display = "block";
+        changeRequestForm.style.display = "none";
+        overlay.style.display = "block";
+
+       })
+       changeRequestBtn.addEventListener("click",function(){
+        changeRequestForm.style.display = "block";
+        addCourseForm.style.display = "none";
+        overlay.style.display = "block";
+       })
+       overlay.addEventListener("click",function(){
+        changeRequestForm.style.display = "none";
+        addCourseForm.style.display = "none";
+        overlay.style.display = "none";
+       });
+       
+    </script>
+</body>
+</html>

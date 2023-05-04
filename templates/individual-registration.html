@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>individual Registration</title>
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+
+    <style>
+        body{
+            background: none;
+        }
+        .main-container{
+            display: flex;
+            margin: 30px 40px;
+        }
+        .main-container h3{
+            color: #373737;
+            padding-bottom: 40px;
+            font: normal 600 24px/33px "Manrope", sans-serif;
+        }
+        .descriptions{
+            flex: 0.6;
+            margin-right: 30px;
+            padding-right: 60px;
+            border-right: 1.5px solid #f3f3f3;
+        }
+        .descriptions p{
+            padding-bottom: 30px;
+            color: #6A6A6A;
+            font: normal 400 18px/29px "Manrope", sans-serif;
+        }
+        .guidelines{
+            flex: 0.4;
+        }
+        .guidelines ul li{
+            padding-bottom: 20px;
+            color: #000000;
+            font: normal 400 16px/22px "Manrope", sans-serif;
+            list-style: none;
+        }
+        .guidelines ul li:before {
+            content:"•";
+            font-size:40px;
+            vertical-align: top;
+            line-height:20px;
+            color:  #0041EC;
+        }
+        .guidelines ul li span{
+            padding-left: 20px;
+        }
+        .guidelines button{
+            margin-top: 20px;
+            width: 450px;
+            height: 58px;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+        }
+        .guidelines button:hover{
+            background: #0137c2;
+        }
+        .registration-container{
+            width: 560px;
+           overflow: hidden;
+           overflow-y: scroll;
+            background: #f4f4f4;
+           
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 998;
+        }
+        .registration-container h3{
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 20px;
+            color: #000000;
+            font: normal 700 24px/24px "Manrope", sans-serif;
+        }
+        form{
+            position: relative;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 50px;
+        }
+
+        form label{
+            /* padding-bottom: 10px; */
+            font: normal 400 16px/18px "Manrope", sans-serif;
+        }
+        form input,textarea{
+            width: 100%;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border: 0;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+        input::placeholder{
+            color: #6B6B6B;
+            font: normal 400 14px/14px "Manrope", sans-serif;
+        }
+        form button{
+            width: 100%;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+            height: 48px;
+            margin-top: 10px;
+        }
+        form button:hover{
+            background: #0137c2;
+        }
+        #form1{
+            display: block;
+        }
+        #form2{
+            display: none;
+        }
+        #form3{
+            display: none;
+        }
+        .right-part a{
+            padding-right: 70px;
+            font-size: 25px;
+            color: #0041EC;
+        }
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index:1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href="https://mail.google.com/mail"><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <a href=""><span><img src="/static/images/call_icon.svg" alt="">9348949096</span></a>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/static/images/Facebook_icon.svg" alt="">
+                <img src="/static/images/linkedin_icon.svg" alt="">
+                <a href=""><span >contact us</span></a>
+            </div>
+        </div>
+
+        <div class="container nav">
+            <div class="left-part">
+                <a href=""><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <!-- <input type="text" placeholder="Search" class="search-bar"> -->
+            </div>
+
+            <div class="right-part">
+                <a href="#about">About us</a>
+               
+            </div>
+        </div>
+    </header>
+    <center><h1>Description for individuals</h1></center>
+    <div class="main-container">
+        <div class="descriptions">
+            <h3>Description:</h3>
+            <p>As an individual author, you have the opportunity to share your knowledge and expertise with a wider audience through our platform. By joining us as a service provider, you can create and offer your own courses, reaching students all over the world. </p>
+            <p>With Edeze, you can leverage our user-friendly course creation tools to design engaging and informative courses that cover a wide range of topics. Whether you're an expert in programming, marketing, business, or any other field, our platform provides you with the tools and resources you need to create high-quality educational content.</p>
+            <p>In addition to offering your courses, Edeze also allows you to engage with your students through discussion forums and messaging features. This enables you to provide personalized support and answer any questions that your students may have, helping them to succeed in their learning journey. Join us as an individual author and start sharing your knowledge and expertise with the world.</p>
+            
+        </div>
+        <div class="guidelines">
+            <h3>Guidelines:</h3>
+            <ul>
+                <li><span> Ensure that your course content is original and not copied </span></li>
+                <li><span>The course should provide value to the learners and be informative.</span></li>
+                <li><span>The course should be structured logically with proper sequencing</span></li>
+                <li><span>Use of multimedia elements like images, videos are encouraged.</span></li>
+                <li><span> Ensure that your course is error-free </span></li>
+                <li><span> Provide clear and concise instructions for any assignments.</span></li>
+                <li><span>Regularly update your course content based on feedback .</span></li>
+            </ul>
+            <button type="submit" id="registerBtn">Register</button>
+        </div>
+    </div>
+
+    <div class="registration-container" id="registrationForm">
+        <h3>Apply as individual</h3>
+            <form action="/joinus/Individual_Author" id="form1" method="POST" enctype="multipart/form-data">
+            
+                <label for="email">your email address</label>
+                <input type="email" name="email" id="" placeholder="example@gmail.com" required>
+    
+                <label for="password">password</label>
+                <input type="password" name="password" placeholder="enter your password" required>
+    
+            
+                <label for="firstName">Enter your First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First  Name" required>
+
+                <label for="lastName">Enter your last name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+
+                <label for="uploadID">ID Proof</label>
+                <input type="file" id="uploadID" name="uploadID" accept=".docx,.pdf" required>
+                   
+                <label for="uploadQualification">Qualification</label>
+                <input type="file" id="uploadQualification" name="uploadQualification" accept=".docx,.pdf" required>
+                
+                <!-- <label for="price">price</label>
+                <input type="text" id="price" placeholder="price" required > -->
+
+            
+                <label for="about">About</label>
+                <textarea name="about" id="about" cols="30" rows="10"></textarea>
+
+                <button type="submit" >Apply</button> 
+            </form>
+    </div>
+    <div class="overlay" id="overlay" style="display: none;"></div>
+    
+
+    <script>
+        //show registration form
+        const registerBtn = document.getElementById("registerBtn");
+        const registrationForm = document.getElementById("registrationForm")
+        const overlay = document.getElementById("overlay");
+
+        registerBtn.addEventListener("click",function(){
+            registrationForm.style.display = "block";
+            overlay.style.display = "block";
+        });
+        overlay.addEventListener("click",function(){
+            registrationForm.style.display = "none";
+            
+            overlay.style.display = "none";
+           });
+    </script>
+</body>
+</html>

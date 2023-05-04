@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.main-section .path{
+     padding-bottom: 20px;
+     border-bottom: 1.5px solid #F3F3F3;
+     margin: 35px 60px 0px 60px;
+}
+.main-section .path p{
+    color: #454A6D;
+    font: normal 500 16px/22px "Manrope", sans-serif;
+}
+
+.tab {
+    /* overflow: hidden; */
+    margin: 20px auto;
+    background: #E0ECFD;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    
+}
+
+.tab button {
+   background: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px;
+    transition: .3s;
+    font-size: 17px;
+    color: #706F6F;
+
+}
+
+/* .tab button:hover {
+    background-color: #010D51;
+} */
+
+.tab button.active {
+    background: #010D51;
+    border-radius: 6px;
+    color: #ffffff;
+}
+.cart-container{
+    display: flex;
+    border-bottom: 1.5px solid #F3F3F3;
+}
+.cart-container .course-list{
+    flex: 0.65;
+    padding: 21px 31px 40px 61px;
+    border-right: 1.5px solid #F3F3F3 ;
+}
+.course-list .course-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1.5px solid #F3F3F3;
+}
+.course-item .description{
+    display: flex;
+    column-gap: 25px;
+}
+.course-item .btn{
+    padding-right: 20px;
+    text-align: center;
+}
+.course-item button{
+    border: none;
+    background: none;
+    color: #747474;
+    font: normal 500 16px/22px "Manrope", sans-serif;
+}
+.course-detail p{
+    padding-bottom: 15px;
+    color: #373737;
+    font: normal 700 16px/22px "Manrope", sans-serif;
+}
+.billing-details{
+    margin: 20px 60px 40px 30px;
+    flex: 0.35;
+}
+.address .heading{
+    display: flex;
+    justify-content: space-between;
+}
+.address h4{
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    color: #000000;
+}
+.address span{
+    color: #005DF2;
+    font: normal 800 20px/27px "Manrope", sans-serif;
+}
+.address input{
+    margin-top: 30px;
+    width: 459px;
+    height: 94px;
+    background: #F8F8F8;
+    border-radius: 9px;
+    border: none;
+    padding: 18px 35px;
+}
+.order-total{
+    margin-top: 40px;
+}
+.order-total h4{
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    color: #000000;
+}
+.order-total .price{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.order-total .price p{
+    font: normal 400 16px/22px "Manrope", sans-serif;
+    color: #000000;
+}
+.order-total .price span{
+    font: normal 700 16px/22px "Manrope", sans-serif;
+    color: #000000;
+}
+.billing-details .btns{
+    margin-top: 60px;
+    display: flex;
+    /* margin-bottom: 40px; */
+}
+.ContinueShopping-btn{
+    width: 215px;
+    height: 58px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    color: #000000;
+    font: normal 500 18px/25px "Manrope", sans-serif;
+}
+.ContinueShopping-btn:hover{
+    background-color: #d8d8d8;
+}
+.Checkout-btn{
+    width: 215px;
+    height: 58px;
+    background: #0041EC;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    font: normal 500 18px/25px "Manrope", sans-serif;
+    margin-left: 30px;
+}
+.Checkout-btn:hover{
+    background: #0f3aa5;
+}
+.more-product h4{
+    padding: 25px 60px;
+    color: #000000;
+    font: normal 600 20px/27px "Manrope", sans-serif;
+}
+.product-container{
+    margin: 0pc 60px 60px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.product-container .course{
+    flex-basis: 20%;
+    /* padding-bottom: 40px; */
+}
+.course{
+    border: 1.5px solid rgb(223, 223, 223) ;
+    border-radius: 10px;
+    margin: 0px 35px 35px 35px;
+}
+.course p{
+    text-align: start;
+    max-width: 240px;
+    padding: 15px 15px 10px 15px;
+    font: normal 400 16px/20px "Manrope", sans-serif;
+    color: #000000;
+}
+.course .price{
+    padding: 0px 15px 10px 15px;
+}
+.course .addToCart-btn{
+    font: normal 500 14px/19px "Manrope", sans-serif;
+    width: 281px;
+    height: 42px;
+    border: none;
+    background:#F88503;
+    border-radius: 0px 0px 10px 10px;
+    color: #ffffff;
+}
+#enrollment-cart{
+    display: none;
+}

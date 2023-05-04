@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>university Registration</title>
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+
+    <style>
+        body{
+            background: none;
+        }
+        .main-container{
+            display: flex;
+            margin: 30px 40px;
+        }
+        .main-container h3{
+            color: #373737;
+            padding-bottom: 40px;
+            font: normal 600 24px/33px "Manrope", sans-serif;
+        }
+        .descriptions{
+            flex: 0.6;
+            margin-right: 30px;
+            padding-right: 60px;
+            border-right: 1.5px solid #f3f3f3;
+        }
+        .descriptions p{
+            padding-bottom: 30px;
+            color: #6A6A6A;
+            font: normal 400 18px/29px "Manrope", sans-serif;
+        }
+        .guidelines{
+            flex: 0.4;
+        }
+        .guidelines ul li{
+            padding-bottom: 20px;
+            color: #000000;
+            font: normal 400 16px/22px "Manrope", sans-serif;
+            list-style: none;
+        }
+        .guidelines ul li:before {
+            content:"•";
+            font-size:40px;
+            vertical-align: top;
+            line-height:20px;
+            color:  #0041EC;
+        }
+        .guidelines ul li span{
+            padding-left: 20px;
+        }
+        .guidelines button{
+            margin-top: 20px;
+            width: 450px;
+            height: 58px;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+        }
+        .guidelines button:hover{
+            background: #0137c2;
+        }
+        .registration-container{
+            width: 560px;
+           overflow: hidden;
+           overflow-y: scroll;
+            background: #f4f4f4;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 998;
+        }
+        .registration-container h3{
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 20px;
+            color: #000000;
+            font: normal 700 24px/24px "Manrope", sans-serif;
+        }
+        form{
+            position: relative;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 50px;
+        }
+
+        form label{
+            /* padding-bottom: 10px; */
+            font: normal 400 16px/18px "Manrope", sans-serif;
+        }
+        form input,textarea{
+            width: 100%;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border: 0;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+        input::placeholder{
+            color: #6B6B6B;
+            font: normal 400 14px/14px "Manrope", sans-serif;
+        }
+        form button{
+            width: 100%;
+            background: #0041EC;
+            border-radius: 6px;
+            border: none;
+            color: #FFFFFF;
+            font: normal 400 18px/18px "Manrope", sans-serif;
+            height: 48px;
+            margin-top: 10px;
+        }
+        form button:hover{
+            background: #0137c2;
+        }
+        #form1{
+            display: block;
+        }
+        #form2{
+            display: none;
+        }
+        #form3{
+            display: none;
+        }
+        .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index:1;
+        }
+        .right-part a{
+            padding-right: 70px;
+            font-size: 25px;
+            color: #0041EC;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href="https://mail.google.com/mail"><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <a href=""><span><img src="/static/images/call_icon.svg" alt="">9348949096</span></a>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/static/images/Facebook_icon.svg" alt="">
+                <img src="/static/images/linkedin_icon.svg" alt="">
+                <a href=""><span >contact us</span></a>
+            </div>
+        </div>
+
+        <div class="container nav">
+            <div class="left-part">
+                <a href=""><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <!-- <input type="text" placeholder="Search" class="search-bar"> -->
+            </div>
+
+            <div class="right-part">
+                <a href="#about">About us</a>
+                
+            </div>
+        </div>
+    </header>
+    <center><h1>Description for universitiy </h1></center>
+    <div class="main-container">
+        <div class="descriptions">
+            <h3>Description:</h3>
+            <p>We are pleased to invite your esteemed institution to become a part of our innovative and advanced e-learning platform, Edeze. With Edeze, we aim to provide high-quality education to students from all corners of the world. We believe that education is a fundamental right, and we want to make it accessible to everyone, regardless of their geographical location.</p>
+            <p>As a service provider on Edeze, your institution can showcase its expertise and offer courses on various subjects. You can create a profile for your institution, provide a detailed description of your courses, and reach out to students from all over the world. We believe that your participation will not only help your institution gain global recognition but also provide students with the best educational experience.</p>
+            <p>To become a service provider on Edeze, your institution needs to meet certain requirements. These include having a strong academic background, experienced faculty members, and a commitment to delivering quality education. We also require all service providers to obtain necessary accreditation and certifications to ensure the authenticity of their courses.</p>
+            
+        </div>
+        <div class="guidelines">
+            <h3>Guidelines:</h3>
+            <ul>
+                <li><span> Basic information about your institution.</span></li>
+                <li><span>its name, address, and contact details.</span></li>
+                <li><span> A brief description of your institution's background, history.</span></li>
+                <li><span> Information about your teaching staff, including their qualifications</span></li>
+                <li><span>Any certifications or accreditations your institution has received</span></li>
+                <li><span>qualifications, experience, and areas of expertise of teaching staff.</span></li>
+                
+            </ul>
+            <button type="submit" id="registerBtn">Register</button>
+        </div>
+    </div>
+
+    <div class="registration-container" id="registrationForm">
+        <h3>Apply as university</h3>
+            <form action="/joinus/University" id="form1" enctype="multipart/form-data" method="POST">
+            
+                <label for="email">your email address</label>
+                <input type="email" name="email" id="" placeholder="example@gmail.com" required>
+    
+                <label for="password">password</label>
+                <input type="password" name="password" placeholder="enter your password" required>
+     
+            
+                <label for="UniversityName">Enter University Name</label>
+                <input type="text" name="UniversityName" id="UniversityName" placeholder="University Name" required>
+
+                <label for="lastName">Enter Department name</label>
+                <input type="text" name="departmentName" id="departmentName" placeholder="Last Name" required>
+
+                <label for="UniversityAccreditation">University Accreditation</label>
+                <input type="file" name="UniversityAccreditation" id="UniversityAccreditation" accept=".docx,.pdf" required>
+                   
+                <label for="DepartmentCertification">Department Certification</label>
+                <input type="file" name="DepartmentCertification" id="DepartmentCertification" accept=".docx,.pdf" required>
+                
+                <!-- <label for="price">price</label>
+                <input type="text" id="price" placeholder="price" required > -->
+
+                <label for="about">About</label>
+                <textarea name="about" id="about" cols="30" rows="10"></textarea>
+
+                <button type="submit" >Apply</button> 
+            </form>
+    </div>
+
+    <div class="overlay" id="overlay" style="display: none;"></div>
+    
+
+    <script>
+        //show registration form
+        const registerBtn = document.getElementById("registerBtn");
+        const registrationForm = document.getElementById("registrationForm")
+        const overlay = document.getElementById("overlay");
+
+        registerBtn.addEventListener("click",function(){
+            registrationForm.style.display = "block";
+            overlay.style.display = "block";
+        });
+
+        overlay.addEventListener("click",function(){
+            registrationForm.style.display = "none";
+            overlay.style.display = "none";
+        });
+    </script>
+</body>
+</html>

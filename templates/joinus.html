@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joinUs</title>
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <style>
+        .joinus-container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(202, 228, 251);
+            width: 778px;
+            height: 457px;
+            border-radius: 15px;
+        }
+        .joinus-container h1{
+            color: #000000;
+            font: normal 700 32px/32px "Manrope", sans-serif;
+            padding: 20px 0px 100px 0px;
+        }
+        .joinus-container .options{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .options a{
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+            border-radius: 10px;
+            padding: 18px 36px;
+            color: #061C41;
+            font: normal 700 20px/32px "Manrope", sans-serif;
+        }
+        .options img{
+            width: 100px;
+            height: 100px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href="https://mail.google.com/mail"><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <a href=""><span><img src="/static/images/call_icon.svg" alt="">9348949096</span></a>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/static/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/static/images/Facebook_icon.svg" alt="">
+                <img src="/static/images/linkedin_icon.svg" alt="">
+                <a href=""><span >contact us</span></a>
+            </div>
+        </div>
+
+        <div class="container nav">
+            <div class="left-part">
+                <a href=""><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="search">
+                    <button type="submit" onclick="search()"><i class="fa-solid fa-magnifying-glass icon-search"></i></button>
+                </div>
+            </div>
+
+            <div class="right-part">
+                <a href="#about">About us</a>
+                <!-- <a href="joinus.html"><button class="joinUs secondary-btn" id="" >Join Us</button></a> -->
+               <a href="login.html"><button class="login primary-btn" id="Login">Login/SignUp</button></a> 
+            </div>
+        </div>
+    </header>
+
+    <div class="joinus-container">
+        <center><h1>Join Us</h1></center>
+        <div class="options">
+            <a href="/registerUniversity"><img src="/static/images/university-logo.svg" alt="">university</a>
+            <a href="/registerIA"><img src="/static/images/individual-author-logo.svg" alt="">individual</a>
+            <a href="/registerMentor"><img src="/static/images/mentor-logo.svg" alt="">mentor</a>
+        </div>
+    </div>
+</body>
+</html>

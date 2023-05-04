@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | EDEZE </title>
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/header-footer.css">
+    
+    <style>
+      body{
+        background-image: url(/static/images/login-background.jpg);
+      }
+      .left-panel{
+        background: url(/static/images/login-background.svg);
+    }
+    </style>
+</head>
+<body>
+    <header>
+      <div class="container">
+          <div class="contact">
+             <span> <a href=""><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+  
+              <span><img src="/static/images/call_icon.svg" alt="">9348949096</span>
+          </div>
+          <div class="social">
+              <span>Follow us on:</span>
+              <img src="/static/images/Insta_icon.svg" alt="">
+              <img src="/static/images/youtube_icon.svg" alt="">
+              <img src="/static/images/Facebook_icon.svg" alt="">
+              <img src="/static/images/linkedin_icon.svg" alt="">
+              <span >contact us</span>
+          </div>
+      </div>
+      <div class="container nav">
+          <div class="left-part">
+            <a href="/pages/index.html"><img src="/static/images/logo.svg"  alt="logo" class="logo"></a>
+            <div class="search-box">
+              <input type="text" id="search" placeholder="search">
+              <button type="submit" onclick="search()"><i class="fa-solid fa-magnifying-glass icon-search"></i></button>
+          </div>
+          </div>
+          <div class="right-part">
+              <a href="#about">About us</a>
+              <button class="joinUs secondary-btn" id="">Join Us</button>
+              <a href="login.html"><button class="login primary-btn" id="Login">Login/SignUp</button></a> 
+          </div>
+      </div>
+   </header>
+  
+  <section>
+    <div class="Register-container">
+      <div class="Register-form">
+        <div class="left-panel">
+          <div >
+              <img src="/static/images/logo.svg" alt="">
+              <h2>Register / Login</h2>
+              <p>Login & register to continue.</p>
+          </div>
+          <div >
+            <p >Already an user</p>
+            <h3><a href="/display_login">login</a></h3>
+          </div>
+        </div>
+      <div class="right-panel">
+        <form action="" class="registration-form" id="registerForm">
+          <h2>Register</h2>
+          <label for="firstNmae">First Name</label>
+            <input type="text" placeholder="Enter Your First Name" name="firstName" id="firstName" required>
+          
+          <label for="lastNmae">Last Name</label>
+            <input type="text" placeholder="Enter Your last Name" name="lastName" id="lastName" required>
+            
+          <label for="email">Email</label>
+          <div>
+            <input type="email"  name="email" id="email" placeholder="Your Email Address" required>
+          <button class="get-otp" id="get-otp" >Get OTP</button>
+          </div>
+
+          <div class="otp-container" >
+            <input type="number" id="otp-field" placeholder="Enter the OTP" maxlength="4">
+            <span id="message" style="padding-left: 10px;"></span>
+            <!-- <input type="text" class="otp-input" maxlength="1"  />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" /> -->
+          </div>
+        <div class="password-container">
+          <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" >
+          
+          <label for="comfirmPassword">Confirm Password</label>
+            <input type="password" placeholder="Re-Enter Your Password" id="confirmPassword" name="confirmPassword" >
+        </div>
+          
+          <button class="signup" type="submit" id="signupBtn" >Sign up</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <script>
+            //disabled sign up button
+          var signUp_btn = document.querySelector(".signup");
+          signUp_btn.disabled = true;
+          signUp_btn.style.cursor = "not-allowed";
+          var email = document.getElementById("email");
+          
+        // function sendOTP(){
+          const getOTP =document.getElementById("get-otp");
+          getOTP.addEventListener("click",function(event){
+            event.preventDefault();
+            
+          const otpVerify = document.getElementsByClassName("otp-container")[0];
+          
+          //opt generate
+          let otp_val = Math.floor(Math.random()*10000);
+          let emailBody = `
+              <h1>welcome to EDEZE</h1><br>
+              <p>Your OTP is: ${otp_val}</p>
+          `;
+           console.log(otp_val)
+          //email send code 
+          Email.send({
+              SecureToken : "1cf75330-7ceb-401e-871a-8f1d50032e31",
+              To : email.value,
+              From : "bikashkumarnayak807@gmail.com",
+              Subject : "otp verification",
+              Body : emailBody
+            }).then(
+              message => {
+                if(message === "OK"){
+                  alert("otp send to email"+ email.value);
+
+                  otpVerify.style.display = "flex";
+                  const otpInput = document.getElementById("otp-field");
+                  var passwordContainer= document.querySelector(".password-container");
+                  msg = document.getElementById("message");
+                  otpInput.addEventListener("input",function(){
+                    if(otpInput.value.length == 4){
+                      if(otpInput.value == otp_val){
+                        msg.innerText = "otp is valid";
+                        passwordContainer.style.display = "flex";
+                        signUp_btn.disabled = false;
+                        signUp_btn.style.cursor = "pointer";
+                      }
+                      else{
+                        msg.innerText = "otp is invalid";
+                        otpInput.classList.add("shake");
+                        setTimeout(() => {
+                          otpInput.classList.remove("shake");
+                        }, 500);
+                      }
+                    }
+                    else{
+                      passwordContainer.style.display = "none";
+                      signUp_btn.disabled = true;
+                      signUp_btn.style.cursor = "not-allowed";
+                    }
+                    
+                  });
+                  
+                }
+              }
+            );
+          })
+
+
+          const firstName = document.getElementById("firstName");
+          const lastName = document.getElementById("lastName");
+          var email = document.getElementById("email")
+          const password = document.getElementById("password");
+          const confirmPassword = document.getElementById("confirmPassword");
+          signUp_btn=document.getElementById("signupBtn")
+          signUp_btn.addEventListener('click', function(event){
+            event.preventDefault();
+            if(password.value == confirmPassword.value){
+              callAPI();
+            }
+            else{
+              alert("both passwords are not same");
+            }
+            
+          });
+
+          function callAPI(){
+            alert(firstName.value);
+            alert(lastName.value);
+            alert(email.value);
+            alert(password.value)
+            fetch("http://127.0.0.1:8000/signup",{
+              method: 'POST',
+                  headers: {
+                  'Content-Type': 'application/json' // Set the content type to JSON
+                  },
+                  body: JSON.stringify({
+                    "First_name": firstName.value,
+                    "Second_name": lastName.value,
+                    "Email": email.value,
+                    "Password": password.value
+                  })
+              })
+              .then(function(response) {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the response body as JSON
+              })
+              .then(function(data) {
+                  // Handle the response data
+                  postdata = data;
+                  alert(postdata.status)
+                  
+                  window.location.href = "/display_login";
+              })
+              .catch(function(error) {
+                  // Handle any errors that occurred during the request
+                  console.error('Error:', error);
+                  alert(error)
+              });
+            }  
+            //else {
+              //alert("wrong password");
+            // }
+  </script>
+  </body>
+</html>

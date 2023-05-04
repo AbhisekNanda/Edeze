@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css">
+
+    <style>
+        h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#cart-items {
+  margin: 1em;
+}
+
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.cart-item h2 {
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #e53935;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>My Cart</h1>
+    <div id="cart-items">
+      <div class="cart-item">
+        <h2>Course Title 1</h2>
+        <p class="price">$99.99</p>
+        <button class="remove-btn" data-id="1">Remove</button>
+      </div>
+      <div class="cart-item">
+        <h2>Course Title 2</h2>
+        <p class="price">$149.99</p>
+        <button class="remove-btn" data-id="2">Remove</button>
+      </div>
+    </div>
+    <p id="total-price">Total: $249.98</p>
+    <script src="cart.js"></script>
+    <script>
+        // Get all remove buttons
+const removeBtns = document.querySelectorAll('.remove-btn');
+
+// Add click event listeners to all remove buttons
+removeBtns.forEach(btn => {
+  btn.addEventListener('click', removeCartItem);
+});
+
+// Function to remove cart item
+function removeCartItem(event) {
+  // Get the ID of the course to remove
+  const id = event.target.dataset.id;
+
+  // Remove the cart item from the DOM
+  const cartItem = event.target.parentElement;
+  cartItem.remove();
+
+  // Update the total price
+  const totalPriceElem = document.getElementById('total-price');
+  const totalPrice = parseFloat(totalPriceElem.textContent.substring(7));
+  const priceElem = cartItem.querySelector('.price');
+  const price = parseFloat(priceElem.textContent.substring(1));
+  const newTotalPrice= parseFloat(totalPrice -price);
+  totalPriceElem.textContent = `Total: $${newTotalPrice.toFixed(2)}`;
+
+  // TODO: Remove the cart item from the cart data structure and update the cart in localStorage or on the server
+}
+
+    </script>
+  </body>
+</html>

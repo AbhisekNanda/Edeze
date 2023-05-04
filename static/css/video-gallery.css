@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.page-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CEDFFD;
+    padding-top: 50px;
+}
+.page-header h1{
+    font-family: 'DM Serif Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 110%;
+    color: #042251;
+}
+.page-header p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #042251;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.course-container{
+    margin: 35px 60px 60px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+}
+.course-container .course{
+    position: relative;
+    text-align: start;
+    color: white;
+    margin: 35px 35px 35px 34px;
+  /* margin: 3%; */
+}
+.course-container .course span{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font: normal 600 20px/27px "Manrope", sans-serif;
+    color: #ffffff;
+    max-width: 140px;
+}

@@ -1,0 +1,95 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Text', serif;
+    font-family: 'Manrope', sans-serif;
+    background-image: url(/images/login-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+.forgot-pass-container{
+    width: 100%;
+    height: 80vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.pass-form{
+    display: flex;
+    font-family: 'Manrope';
+    font-style: normal;
+    text-decoration: none;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.left{
+    background: url(/images/login-background.svg);
+}
+.left img{
+    width: 180px;
+    height: 90px;
+    padding: 24px 29px 0px 10px;
+}
+.left h2{
+    font-family: 'DM Serif Text';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    color: #005DF2;
+    padding: 20px 51px 0px 30px;
+}
+.left h3{
+    padding:100px 0px 0px 30px;
+}
+.right{
+    padding: 16px 16px 150px 16px ;
+}
+.right form{
+    display: flex;
+    flex-direction: column;
+}
+.right h2{
+    margin: 0;
+    padding-bottom: 55px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
+.right label{
+    font-family: 'Krub';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    color: #474747;
+    padding-bottom: 10px;
+}
+.right input{
+    padding: 16px;
+    width: 382px;
+    height: 30px;
+    background: #F0F0F0;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 50px;
+}
+.right .login{
+    width: 382px;
+    height: 40px;
+    background: #0041EC;
+    border: none;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+a{
+    color: #005DF2;
+}

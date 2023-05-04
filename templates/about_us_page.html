@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDEZE</title>
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- link swiper's css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/aboutus.css">
+    
+</head>
+ <body> <!--class="overlay" -->
+    <div class="image-container">
+    <img src="/static/images/about_us_bg.png" alt="Full width image">
+    <div class="text-overlay">
+        <h1>Home/ About us</h1>
+        <p class="first_text">About us</p>
+        <p class="second_text">Subtitle for about us goes here</p>
+      </div>
+    <img src="/static/images/about_us.png" alt="Overlay image" class="overlay-image">
+  </div>
+  <p class="description">
+    EDeze is a user-friendly e-learning platform designed to provide high-quality online courses to learners from all over the world. Our team is dedicated to creating an accessible and affordable learning experience that fits the needs of students, professionals, and lifelong learners. We believe in the power of education to transform lives and we strive to make learning accessible to everyone. With EDeze, you can explore a wide range of courses and gain the skills you need to succeed in your personal and professional life. Join us today and start your learning journey with EDeze!"
+  </p>
+  <div class="text_container">
+    <p>We are accredited by industry leaders including Axelos-UK,PECB-Canada, APMG-UK, PEOPLECERT-Greece, ISACA-USA,<br> SCRUMStudy-USA and EXIN-Netherlands to deliver our services.</p>
+  </div>
+  <div class="mission_and_vision">
+    <div>
+        <img src="/static/images/mission.svg" alt="our mission">
+        <h1>Our mission</h1>
+        <p>Our mission is to revolutionize the education industry by providing a comprehensive online platform that connects students with expert educators and industry professionals. We strive to make education accessible and affordable for everyone, regardless of their geographical location, socio-economic background, or academic level. Our goal is to create a seamless learning experience that empowers individuals to achieve their full potential and helps them realize their career aspirations.</p>
+    </div>
+    <div>
+        <img src="/static/images/vision.svg" alt="our vision">
+        <h1>Our vision</h1>
+        <p>Our vision is to become the go-to platform for students, educators, and professionals to learn, share knowledge, and advance their careers. We aim to create a community-driven platform where users can access quality educational content, connect with industry experts, and collaborate with peers to enhance their learning experience. We strive to empower individuals to achieve their full potential and make a positive impact on society through education.
+
+        </p>
+    </div>
+  </div>
+
+    <!-- Include Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true,
+      },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+      autoplay: {
+        delay: 2000,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+      
+    });
+      </script>    
+  
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login | EDEZE</title>
+  <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/home.css">
+  <link rel="stylesheet" href="/static/css/login.css">
+  <link rel="stylesheet" href="/static/css/header-footer.css">
+
+  
+</head>
+<body>
+ 
+<header>
+  <div class="container">
+      <div class="contact">
+         <span> <a href=""><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+          <span><img src="/static/images/call_icon.svg" alt="">9348949096</span>
+      </div>
+
+      <div class="social">
+          <span>Follow us on:</span>
+          <img src="/static/images/Insta_icon.svg" alt="">
+          <img src="/static/images/youtube_icon.svg" alt="">
+          <img src="/static/images/Facebook_icon.svg" alt="">
+          <img src="/static/images/linkedin_icon.svg" alt="">
+          <span >contact us</span>
+      </div>
+  </div>
+
+  <div class="container nav">
+    
+      <div class="left-part">
+          <a href="/"><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+          <div class="search-box">
+            <input type="text" id="search" placeholder="search">
+            <button type="submit" onclick="search()"><i class="fa-solid fa-magnifying-glass icon-search"></i></button>
+        </div>
+      </div>
+
+      <div class="right-part">
+          <a href="#about">About us</a>
+          <button class="joinUs secondary-btn" id="">Join Us</button>
+         <a href=""><button class="login primary-btn" id="Login">Login/SignUp</button></a> 
+      </div>
+  </div>
+</header>
+<section>
+  <div class="login-form">
+    <div class="left-panel">
+      <img src="/static/images/logo.svg" alt="">
+      <h2>Register / Login</h2>
+      <p id="p1">Login & register to continue.</p>
+      <p>Don’t have an account?</p>
+      <h3><a href="/Register">Register now</a></h3>
+    </div>
+    <div class="right-panel">
+      <form method="POST" action="/Profile">
+         <!--<div class="close-btn">&times;</div> -->
+        <h2>Login</h2>
+          <label for="email">Email</label>
+            <input type="email" placeholder="Your Email Address" name="email" id="email" required>
+
+          <label for="password">password</label>
+            <input type="password" placeholder="Enter Your Password" name="password" id="password" required>
+          <a href="">Forgot Password?</a>
+          <button class="login-btn" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  
+
+
+
+</script>
+
+<!-- <script src="/login.js"></script> -->
+</body>
+</html>

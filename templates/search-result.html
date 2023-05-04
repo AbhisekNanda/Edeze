@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/22e3c77d69.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/header-footer.css">
+    <link rel="stylesheet" href="/static/css/search-result.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="contact">
+               <span> <a href=""><img src="/static/images/mail_icon.svg" alt="">demo@edeze.com </a></span>
+
+                <span><img src="/static/images/call_icon.svg" alt="">9348949096</span>
+            </div>
+
+            <div class="social">
+                <span>Follow us on:</span>
+                <a href=""><img src="/static/images/Insta_icon.svg" alt=""></a>
+                <img src="/static/images/youtube_icon.svg" alt="">
+                <img src="/images/Facebook_icon.svg" alt="">
+                <img src="/images/linkedin_icon.svg" alt="">
+                <span >contact us</span>
+            </div>
+        </div>
+
+        <div class=" nav">
+            <div class="left-part">
+                <a href="/pages/home.html"><img src="/static/images/logo.svg" alt="logo" class="logo"></a>
+                <div class="search-box">
+                    <input type="text" placeholder="search" id="search">
+                    <button type="submit" onclick="search()"><i class="fa-solid fa-magnifying-glass icon-search"></i></button>
+                </div>
+                <!-- <div class="search-container">
+                  <form action="">
+                    <input type="text" placeholder="Search" class="search-bar" placeholder="search..">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass" aria-hidden="true" ></i></button> 
+                </form>  
+                </div> -->
+                
+                
+            </div>
+            
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="/static/images/profilr-pic.svg" alt="">
+                        <h3>Bikash Nayak</h3>
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>My Orders</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>  
+                </div>
+            </div>    
+        </div>
+ 
+    </header>
+
+    <section class="result-section">
+        <div class="training-result">
+            <h2>Training</h2>
+            <div class="course-container">
+                {% for ta in tas %}
+                    <div class="course">
+                        <img src="/static/images/training-thumbnail.svg" alt="">
+                        <a href="/trainingdetails/2/{{ta["Course_id"] }}"><h4>{{ta["Course_name"]}}</h4></a>
+                        <p>{{ta["Author"]}}</p>
+                    </div>
+                {% endfor %}                
+            </div>
+        </div>
+
+        <div class="webstore-result">
+            <h2>Webstore</h2>
+            <div class="course-container">
+                {% for wb in wbs %}
+                    <div class="course">
+                        <img src="/static/images/webstore-image.svg" alt="">
+                        <a href="/webstoredetails/2/{{wb["Item_id"]}}"><p>{{wb["Course_name"]}}</p></a>
+                        <div class="price">
+                            <span style="color: #AFAFAF;">price:</span>
+                            <span style="text-decoration: line-through; font-size: 14px;color: #AFAFAF;">₹ {{wb["Price"]}}</span>
+                            <span style="font-weight: 500;font-size: 16px;line-height: 25px;color: #000000;">₹ {{wb["selling_price"]}}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mentorship-result">
+            <h2>Mentorship</h2>
+            <div class="course-container">
+                {% for con in cons %}
+                    <div class="consulting">
+                        <img src="/static/images/consulting-image.svg" alt="">
+                        <a href="/consultingdetails/2/{{con["Cons_id"]}}"><h4>{{con["Consult_name"]}}</h4></a>
+                        <p>{{con["Author"]}}</p>
+                    </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="/static/images/footer-logo.svg" alt="" class="footer-logo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eum ipsa nemo doloremque tenetur minima laudantium quos molestias asperiores ex?</p>   
+            </div>
+            <div class="col">
+                <h3>About us</h3>
+                <ul>
+                    <li><a href="">Company</a></li>
+                    <li><a href="">Our Team</a></li>
+                    <li><a href="">Our Partners</a></li>
+                    <li><a href="">Our Customers</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="">Web store</a></li>
+                    <li><a href="">Privacy policy</a></li>
+                    <li><a href="">Trademarks & Copyrights</a></li>
+                    <li><a href="">Our Customers</a></li>
+                    <li><a href="">Complaints & Appeal</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Subscribe to our notifications</h3>
+                <form>
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">©2023 All Rights reserved by EDEZE.</p>
+    </footer>
+    <!-- <script src="/header-footer.js"></script> -->
+    <script>
+        function search() {
+            let q= document.getElementById("search").value;
+            window.location.href = "/"+q+"/search";
+          }
+    </script>
+</body>
+</html>
